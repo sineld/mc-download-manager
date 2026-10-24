@@ -34,7 +34,7 @@ DMG'yi açıp uygulamayı *Applications* klasörüne sürüklemek yeterlidir. Ar
   Uygulama çalışmıyorsa eklenti onu başlatır (native messaging) ve açılınca indirmeyi teslim eder; başlatamazsa indirme tarayıcıda devam eder.
 - **Video indirme** — sayfadaki `<video>`, `.m3u8` ve `.mpd` akışları yakalanır; "Bu sayfadaki videoyu indir" gömülü yt-dlp'yi
   (ffmpeg ile birleştirme dahil) kullanır. Varsayılan çıktı en fazla 1080p MP4'tür (kapsayıcı ve çözünürlük ayarlanabilir). Tarayıcı çerezleri
-  yt-dlp'ye aktarılır; yaş doğrulamalı videolar için uygulama içi giriş penceresi vardır. yt-dlp tek tıkla GitHub'dan güncellenebilir.
+  yt-dlp'ye aktarılır; yaş doğrulamalı videolar için uygulama içi giriş penceresi vardır. "Bu sayfadaki sesi MP3 olarak indir" yalnızca sesi MP3 olarak kaydeder. yt-dlp tek tıkla GitHub'dan güncellenebilir.
 - **Pano** — bir bağlantı kopyaladığınızda uygulama indirmek isteyip istemediğinizi sorar; ana pencereye ⌘V ile bağlantı yapıştırabilirsiniz.
 - **Arayüz** — kenar çubuğunda kategoriler (Resim, Müzik, Video, Uygulama, Belge, Arşiv…), sıralanabilir tablo, arama,
   IDM tarzı dosya özelinde pencere (bağlantı tablosu, parça çubuğu, otomatik kapat seçeneği), menü çubuğu simgesi, bildirimler.
@@ -123,7 +123,7 @@ Anahtar yoksa imzasız eklenti eklenir; Firefox onu yalnızca `about:debugging` 
 | Uç nokta | Açıklama |
 |---|---|
 | `GET /ping` | sürüm, yt-dlp durumu, aktif indirme sayısı |
-| `POST /download` | `{url, filename?, referer?, userAgent?, cookieHeader?, cookies?[], kind: "file"\|"video", segments?}` |
+| `POST /download` | `{url, filename?, referer?, userAgent?, cookieHeader?, cookies?[], kind: "file"\|"video"\|"audio", segments?}` |
 | `GET /downloads` | son 50 indirmenin durumu |
 | `POST /action` | `{id, action: "pause"\|"resume"\|"cancel"\|"remove"}` |
 
